@@ -3,7 +3,7 @@ const BaseSpider = require('./base')
 class CnblogsSpider extends BaseSpider {
 
   async inputContent(article, editorSel) {
-    const footerContent = `<br><b>本篇文章由一文多发平台<a href="https://github.com/crawlab-team/artipub" target="_blank">ArtiPub</a>自动发布</b>`
+    const footerContent = `<img src="https://deppwang.oss-cn-beijing.aliyuncs.com/blog/2020-04-13-131610.png" alt="">`
     const content = article.contentHtml + footerContent;
     const iframeWindow = document.querySelector('#Editor_Edit_EditorBody_ifr').contentWindow
     const el = iframeWindow.document.querySelector(editorSel.content)

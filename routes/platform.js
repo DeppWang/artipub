@@ -140,9 +140,9 @@ module.exports = {
     if (!platform) {
       return await res.json({
         status: 'ok',
-        error: 'not found'
+        error: 'platform not found'
       }, 404)
-    }
+    } 
 
     // 获取导入爬虫类
     const ImportSpider = require('../spiders/import/' + platform.name)
@@ -158,7 +158,8 @@ module.exports = {
 
     // 返回结果
     await res.json({
-      status: 'ok'
+      status: 'ok',
+      platformname: platform.name
     })
   },
   checkPlatformCookieStatus: async (req, res) => {
